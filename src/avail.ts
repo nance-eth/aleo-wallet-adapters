@@ -31,7 +31,7 @@ import {
     requestCreateEvent,
     requestSignature,
     SessionTypes
-  } from "@puzzlehq/sdk";
+  } from "@puzzlehq/sdk-core";
   import {LeoWallet} from "@demox-labs/aleo-wallet-adapter-leo";
   
   

@@ -15,6 +15,6 @@ export default [
       commonjs(),
       nodeResolve(),
     ],
-    external: ["@puzzlehq/sdk", "@demox-labs/*"],
+    external: ["@puzzlehq/sdk-core", "@demox-labs/*"],
   },
 ];

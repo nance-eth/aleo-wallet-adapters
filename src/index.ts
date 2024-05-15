@@ -1,4 +1,4 @@
-export { configureConnection as configureConnectionForPuzzle } from '@puzzlehq/sdk';
+export { configureConnection as configureConnectionForPuzzle } from '@puzzlehq/sdk-core';
 
 
 export { LeoWalletAdapter, LeoWalletName } from '@demox-labs/aleo-wallet-adapter-leo';
