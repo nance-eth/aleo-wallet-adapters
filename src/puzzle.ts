@@ -39,6 +39,7 @@ import {
     puzzle?: LeoWallet;
   }
   
+  export type SignatureMethods = 'aleo' | 'puzzle';
   
   declare const window: PuzzleWindow;
   
@@ -267,7 +268,7 @@ import {
       this.emit('disconnect');
     }
   
-    async signMessage(message: Uint8Array): Promise<Uint8Array> {
+    async signMessage(message: Uint8Array, method="aleo" as SignatureMethods): Promise<Uint8Array> {
       try {
         const wallet = this._wallet;
         if (!wallet || !this.publicKey) throw new WalletNotConnectedError();
@@ -277,7 +278,8 @@ import {
           const messageString = new TextDecoder().decode(message);
           const signature = await requestSignature({
             message: messageString,
-            address: this.publicKey
+            address: this.publicKey,
+            method
           });
           if (signature.error) {
             throw new Error(signature.error);
